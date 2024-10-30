@@ -40,6 +40,7 @@ struct OnboardingScreen: View {
             .onReceive(viewModel.eventSubject) { event in
                 switch event {
                 case .completed:
+                    navigation.replaceNavigationStack([TabBarScreen().asDestination()], animated: true)
 //                    navigation.push(LoginScreen().asDestination(), animated: true)
                     break
                 case .goToTabBar:
