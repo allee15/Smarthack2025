@@ -69,7 +69,12 @@ class PlayerService():
         response = requests.post(url, headers=headers, data=body)
 
         if response.status_code == 200:
+            self.__log(f"Played round successfully: {response.json()}")
             print("Played round successfully")
             return response.json()
         else:
             raise FailedPlayRoundError()
+        
+    def __log(self, message):
+        with open("log.txt", "a") as f:
+            f.write(f"{message}\n")
