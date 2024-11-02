@@ -9,7 +9,11 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    static let simpleBlue = Color(hex: "#0D6F73")
+    static let refinery = Color(hex: "#98B5E3")
+    static let tank = Color(hex: "#41593D")
+    static let customer = Color(hex: "#A1829E")
+    static let freePath = Color(hex: "#88D1B0")
+    static let occupiedPath = Color(hex: "#7D2F56")
 }
 
 extension Color {

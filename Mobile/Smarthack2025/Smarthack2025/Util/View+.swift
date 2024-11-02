@@ -60,16 +60,20 @@ extension View {
                 ForEach(connections, id: \.id) { connection in
                     if let fromPosition = nodePositions.first(where: { $0.id == connection.fromId }),
                        let toPosition = nodePositions.first(where: { $0.id == connection.toId }) {
-                        Path { path in
-                            let fromPoint = geometry[fromPosition.point]
-                            let toPoint = geometry[toPosition.point]
-                            path.move(to: fromPoint)
-                            path.addLine(to: toPoint)
-                        }
-                        .stroke(
-                            connection.connectionType == "PIPELINE" ? Color.brown : Color.orange,
-                            lineWidth: 2
-                        )
+//                        Button {
+//                            action(connection)
+//                        } label: {
+                            Path { path in
+                                let fromPoint = geometry[fromPosition.point]
+                                let toPoint = geometry[toPosition.point]
+                                path.move(to: fromPoint)
+                                path.addLine(to: toPoint)
+                            }
+                            .stroke(
+                                connection.isCurrentlyUsed ? Color.occupiedPath : Color.freePath,
+                                lineWidth: 2
+                            )
+//                        }
                     }
                 }
             }

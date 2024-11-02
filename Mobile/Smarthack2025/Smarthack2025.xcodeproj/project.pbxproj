@@ -15,7 +15,6 @@
 		0FD38EBB2CD286AF00338FAC /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EBA2CD286AF00338FAC /* Navigation.swift */; };
 		0FD38EBD2CD286C200338FAC /* SafeAreaInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EBC2CD286C200338FAC /* SafeAreaInsets.swift */; };
 		0FD38EBF2CD286D000338FAC /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EBE2CD286D000338FAC /* View+.swift */; };
-		0FD38EC32CD286FB00338FAC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EC22CD286FB00338FAC /* String+.swift */; };
 		0FD38EE82CD2899300338FAC /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EE72CD2899300338FAC /* TabBarItem.swift */; };
 		0FD38EEA2CD289C500338FAC /* TabBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EE92CD289C500338FAC /* TabBarScreen.swift */; };
 		0FD38EEC2CD289E900338FAC /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EEB2CD289E900338FAC /* TabBarViewModel.swift */; };
@@ -47,7 +46,6 @@
 		0FD38EBA2CD286AF00338FAC /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		0FD38EBC2CD286C200338FAC /* SafeAreaInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaInsets.swift; sourceTree = "<group>"; };
 		0FD38EBE2CD286D000338FAC /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
-		0FD38EC22CD286FB00338FAC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0FD38EE72CD2899300338FAC /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		0FD38EE92CD289C500338FAC /* TabBarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarScreen.swift; sourceTree = "<group>"; };
 		0FD38EEB2CD289E900338FAC /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				0FD38EBA2CD286AF00338FAC /* Navigation.swift */,
 				0FD38EBC2CD286C200338FAC /* SafeAreaInsets.swift */,
 				0FD38EBE2CD286D000338FAC /* View+.swift */,
-				0FD38EC22CD286FB00338FAC /* String+.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -305,7 +302,6 @@
 				0FD38F002CD64E8300338FAC /* Refinery.swift in Sources */,
 				0FD38EEE2CD289FF00338FAC /* RootView.swift in Sources */,
 				0FD38F022CD64F2C00338FAC /* Tank.swift in Sources */,
-				0FD38EC32CD286FB00338FAC /* String+.swift in Sources */,
 				0FD38EEA2CD289C500338FAC /* TabBarScreen.swift in Sources */,
 				0FD38EFA2CD64C7100338FAC /* Connection.swift in Sources */,
 				0FD38EB72CD2868D00338FAC /* ControllerRepresentable.swift in Sources */,

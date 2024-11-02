@@ -47,8 +47,7 @@ struct RootView: View {
             .onReceive(viewModel.eventSubject, perform: { event in
                 switch event {
                 case .goToTabBar:
-                    let view = MapScreen().drawConnections(connections: connections)
-                    navigation.replaceNavigationStack([view.asDestination()], animated: true)
+                    navigation.replaceNavigationStack([MapScreen().asDestination()], animated: true)
                 }
             }).onAppear {
                 viewModel.bind()
