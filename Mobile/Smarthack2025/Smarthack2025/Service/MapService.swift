@@ -28,4 +28,28 @@ class MapService {
     func getTanks() -> Future<[Tank], Error> {
         return mapApi.getTanks()
     }
+    
+    var refineriesPublisher: AnyPublisher<[Refinery], Never> {
+        mapApi.refineriesPublisher.eraseToAnyPublisher()
+    }
+    
+    var customersPublisher: AnyPublisher<[Customer], Never> {
+        mapApi.customersPublisher.eraseToAnyPublisher()
+    }
+    
+    var connectionsPublisher: AnyPublisher<[Connection], Never> {
+        mapApi.connectionsPublisher.eraseToAnyPublisher()
+    }
+    
+    var tanksPublisher: AnyPublisher<[Tank], Never> {
+        mapApi.tanksPublisher.eraseToAnyPublisher()
+    }
+    
+    func connectWebSocket() {
+        mapApi.connectWebSocket()
+    }
+    
+    func disconnectWebSocket() {
+        mapApi.disconnectWebSocket()
+    }
 }

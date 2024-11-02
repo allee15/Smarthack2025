@@ -56,13 +56,19 @@ struct MapScreen: View {
                     }
                     Spacer()
                 }
-
+                
             }
             Spacer()
         }.ignoresSafeArea(.all)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.white)
             .drawConnections(connectionsState: viewModel.connectionState)
+            .onAppear {
+                viewModel.connectWebSocket()
+            }
+            .onDisappear {
+                viewModel.disconnectWebSocket()
+            }
     }
 }
 

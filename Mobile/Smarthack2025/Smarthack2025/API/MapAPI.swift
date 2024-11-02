@@ -11,7 +11,20 @@ import SwiftyJSON
 
 let basePath = "http://127.0.0.1:5000/"
 
-class MapAPI {
+class MapAPI: ObservableObject {
+    @Published var refineries = [Refinery]()
+    var refineriesPublisher = PassthroughSubject<[Refinery], Never>()
+    @Published var tanks = [Tank]()
+    var tanksPublisher = PassthroughSubject<[Tank], Never>()
+    @Published var customers = [Customer]()
+    var customersPublisher = PassthroughSubject<[Customer], Never>()
+    @Published var connections = [Connection]()
+    var connectionsPublisher = PassthroughSubject<[Connection], Never>()
+    
+    private let webSocketURL = URL(string: "ws://127.0.0.1:5000/updates") // Adjust to your server’s WebSocket URL
+    private var webSocketTask: URLSessionWebSocketTask?
+    private var cancellables = Set<AnyCancellable>()
+    
     func getRefineries() -> Future<[Refinery], Error> {
         Future { promise in
             var urlComponents = URLComponents(string: "\(basePath)refineries")
@@ -179,5 +192,124 @@ class MapAPI {
             }
             dataTask.resume()
         }
+    }
+    
+    func connectWebSocket() {
+        guard let url = webSocketURL else { return }
+        webSocketTask = URLSession.shared.webSocketTask(with: url)
+        webSocketTask?.resume()
+        receiveMessages()
+    }
+    
+    // Listen for messages
+    private func receiveMessages() {
+        webSocketTask?.receive { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print("WebSocket error: \(error)")
+            case .success(let message):
+                self?.handleWebSocketMessage(message)
+                self?.receiveMessages() // Continue listening for new messages
+            }
+        }
+    }
+    
+    // Handle received messages
+    private func handleWebSocketMessage(_ message: URLSessionWebSocketTask.Message) {
+        switch message {
+        case .string(let jsonString):
+            handleJSONMessage(jsonString)
+        case .data(let data):
+            if let jsonString = String(data: data, encoding: .utf8) {
+                handleJSONMessage(jsonString)
+            }
+        default:
+            break
+        }
+    }
+    
+    private func handleJSONMessage(_ jsonString: String) {
+        guard let data = jsonString.data(using: .utf8) else { return }
+        let json = try? JSON(data: data)
+        
+        if let refineries = json?["refineries"].array {
+            let updatedRefineries = refineries.map { item -> Refinery in
+                return Refinery(
+                    id: item["refinery_id"].stringValue,
+                    name: item["name"].stringValue,
+                    capacity: item["capacity"].stringValue,
+                    maxOutput: item["max_output"].stringValue,
+                    production: item["production"].stringValue,
+                    overflowPenalty: item["overflow_penalty"].stringValue,
+                    underflowPenalty: item["underflow_penalty"].stringValue,
+                    overOutputPenalty: item["over_output_penalty"].stringValue,
+                    productionCost: item["production_cost"].stringValue,
+                    productionCo2: item["production_co2"].stringValue,
+                    initialStock: item["initial_stock"].stringValue,
+                    nodeType: item["node_type"].stringValue
+                )
+            }
+            DispatchQueue.main.async {
+                self.refineries = updatedRefineries
+                self.refineriesPublisher.send(updatedRefineries) // Notify subscribers of new data
+            }
+        }
+        
+        if let connections = json?["connections"].array {
+            let updatedConnections = connections.map { item -> Connection in
+                return Connection(id: item["connection_id"].stringValue,
+                                  fromId: item["from_id"].stringValue,
+                                  toId: item["to_id"].stringValue,
+                                  distance: item["distance"].stringValue,
+                                  leadTimeDays: item["lead_time_days"].stringValue,
+                                  connectionType: item["connection_type"].stringValue,
+                                  maxCapacity: item["max_capacity"].stringValue,
+                                  isCurrentlyUsed: Bool.random())
+            }
+            DispatchQueue.main.async {
+                self.connections = updatedConnections
+                self.connectionsPublisher.send(updatedConnections)
+            }
+        }
+        
+        if let customers = json?["customers"].array {
+            let updatedCustomers = customers.map { item -> Customer in
+                return Customer(id: item["customer_id"].stringValue,
+                                name: item["name"].stringValue,
+                                maxInput: item["max_input"].stringValue,
+                                overInputPenalty: item["over_input_penalty"].stringValue,
+                                lateDeliveryPenalty: item["late_delivery_penalty"].stringValue,
+                                earlyDeliveryPenalty: item["early_delivery_penalty"].stringValue,
+                                nodeType: item["node_type"].stringValue)
+            }
+            DispatchQueue.main.async {
+                self.customers = updatedCustomers
+                self.customersPublisher.send(updatedCustomers)
+            }
+        }
+        
+        if let tanks = json?["tanks"].array {
+            let updatedTanks = tanks.map { item -> Tank in
+                return Tank(id: item["tank_id"].stringValue,
+                           name: item["name"].stringValue,
+                           capacity: item["capacity"].stringValue,
+                           maxInput: item["max_input"].stringValue,
+                           maxOutput: item["max_output"].stringValue,
+                           overflowPenalty: item["overflow_penalty"].stringValue,
+                           underflowPenalty: item["underflow_penalty"].stringValue,
+                           overInputPenalty: item["over_input_penalty"].stringValue,
+                           overOutputPenalty: item["over_output_penalty"].stringValue,
+                           initialStock: item["initial_stock"].stringValue,
+                           nodeType: item["node_type"].stringValue)
+            }
+            DispatchQueue.main.async {
+                self.tanks = updatedTanks
+                self.tanksPublisher.send(updatedTanks)
+            }
+        }
+    }
+    
+    func disconnectWebSocket() {
+        webSocketTask?.cancel(with: .goingAway, reason: nil)
     }
 }

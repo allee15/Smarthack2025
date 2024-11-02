@@ -44,6 +44,11 @@ class MapViewModel: BaseViewModel {
         loadCustomers()
         loadConnections()
         loadTanks()
+        
+        subscribeToRefineryUpdates()
+        subscribeToCustomerUpdates()
+        subscribeToConnectionsUpdates()
+        subscribeToTankUpdates()
     }
     
     func loadRefineries() {
@@ -64,6 +69,15 @@ class MapViewModel: BaseViewModel {
             } .store(in: &bag)
     }
     
+    private func subscribeToRefineryUpdates() {
+        mapService.refineriesPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] refineries in
+                self?.refineriesState = .value(refineries)
+            }
+            .store(in: &bag)
+    }
+    
     func loadCustomers() {
         customerState = .loading
         mapService.getCustomers()
@@ -80,6 +94,15 @@ class MapViewModel: BaseViewModel {
                 guard let self else {return}
                 self.customerState = .value(customers)
             } .store(in: &bag)
+    }
+    
+    private func subscribeToCustomerUpdates() {
+        mapService.customersPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] customers in
+                self?.customerState = .value(customers)
+            }
+            .store(in: &bag)
     }
     
     func loadConnections() {
@@ -100,6 +123,15 @@ class MapViewModel: BaseViewModel {
             } .store(in: &bag)
     }
     
+    private func subscribeToConnectionsUpdates() {
+        mapService.connectionsPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] connections in
+                self?.connectionState = .value(connections)
+            }
+            .store(in: &bag)
+    }
+    
     func loadTanks() {
         tankState = .loading
         mapService.getTanks()
@@ -116,5 +148,22 @@ class MapViewModel: BaseViewModel {
                 guard let self else {return}
                 self.tankState = .value(tanks)
             } .store(in: &bag)
+    }
+    
+    private func subscribeToTankUpdates() {
+        mapService.tanksPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] tanks in
+                self?.tankState = .value(tanks)
+            }
+            .store(in: &bag)
+    }
+    
+    func connectWebSocket() {
+        mapService.connectWebSocket()
+    }
+    
+    func disconnectWebSocket() {
+        mapService.disconnectWebSocket()
     }
 }
