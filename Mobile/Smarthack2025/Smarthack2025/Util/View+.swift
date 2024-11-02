@@ -54,15 +54,14 @@ struct NodePositionKey: PreferenceKey {
 }
 
 extension View {
-    func drawConnections(connections: [Connection]) -> some View {
+    func drawConnections(connectionsState: ConnectionsState) -> some View {
         self.overlayPreferenceValue(NodePositionKey.self) { nodePositions in
-            GeometryReader { geometry in
-                ForEach(connections, id: \.id) { connection in
-                    if let fromPosition = nodePositions.first(where: { $0.id == connection.fromId }),
-                       let toPosition = nodePositions.first(where: { $0.id == connection.toId }) {
-//                        Button {
-//                            action(connection)
-//                        } label: {
+            switch connectionsState {
+            case .value(let connections):
+                GeometryReader { geometry in
+                    ForEach(connections, id: \.id) { connection in
+                        if let fromPosition = nodePositions.first(where: { $0.id == connection.fromId }),
+                           let toPosition = nodePositions.first(where: { $0.id == connection.toId }) {
                             Path { path in
                                 let fromPoint = geometry[fromPosition.point]
                                 let toPoint = geometry[toPosition.point]
@@ -70,12 +69,16 @@ extension View {
                                 path.addLine(to: toPoint)
                             }
                             .stroke(
-                                connection.isCurrentlyUsed ? Color.occupiedPath : Color.freePath,
+                                connection.isCurrentlyUsed ? (connection.connectionType.lowercased() == "TRUCK".lowercased() ? Color.colorArray[(Int(connection.distance) ?? 0) % 15] : Color.freePath) : Color.clear,
                                 lineWidth: 2
                             )
-//                        }
+                        }
                     }
                 }
+            case .failure(_):
+                EmptyView()
+            case .loading:
+                EmptyView()
             }
         }
     }

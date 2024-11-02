@@ -14,6 +14,24 @@ extension Color {
     static let customer = Color(hex: "#A1829E")
     static let freePath = Color(hex: "#88D1B0")
     static let occupiedPath = Color(hex: "#7D2F56")
+    static let colorArray = [
+        Color(hex: "#FFCCCC"), // Light pink
+        Color(hex: "#CCFFCC"), // Light green
+        Color(hex: "#CCCCFF"), // Light blue
+        Color(hex: "#FFFFCC"), // Pale yellow
+        Color(hex: "#FFD9B3"), // Peach
+        Color(hex: "#C4B2D6"), // Soft purple
+        Color(hex: "#FFDFDF"), // Light pink
+        Color(hex: "#D2B48C"), // Tan
+        Color(hex: "#C0C0C0"), // Silver
+        Color(hex: "#E6E6E6"), // Light gray
+        Color(hex: "#F5F5F5"), // Off-white
+        Color(hex: "#CCFFFF"), // Pale cyan
+        Color(hex: "#FFCCE5"), // Light magenta
+        Color(hex: "#FFB3A7"), // Salmon
+        Color(hex: "#FFCCE0"), // Light pinkish magenta
+        Color(hex: "#A394D9")  // Lavender
+    ]
 }
 
 extension Color {

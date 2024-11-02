@@ -9,33 +9,66 @@ import SwiftUI
 
 struct MapScreen: View {
     @EnvironmentObject private var navigation: Navigation
+    @StateObject private var viewModel = MapViewModel()
     
     var body: some View {
         HStack {
             Spacer()
-            VStack(spacing: 36) {
-                Spacer()
-                RefineriesView()
-                StorageTanksView()
-                CustomersView()
-                Spacer()
+            ScrollView([.vertical, .horizontal], showsIndicators: false) {
+                VStack(spacing: 36) {
+                    Spacer()
+                    switch viewModel.refineriesState {
+                    case .loading:
+                        LoaderView()
+                    case .failure(_):
+                        Text("Refineries error")
+                            .font(.poppinsBold(size: 20))
+                            .foregroundStyle(Color.refinery)
+                        
+                    case .value(let refineries):
+                        RefineriesView(refineries: refineries)
+                        
+                        switch viewModel.tankState {
+                        case .loading:
+                            LoaderView()
+                        case .failure(_):
+                            Text("Tanks error")
+                                .font(.poppinsBold(size: 20))
+                                .foregroundStyle(Color.refinery)
+                            
+                        case .value(let tanks):
+                            StorageTanksView(tanks: tanks)
+                                .padding(.bottom, 600)
+                            
+                            switch viewModel.customerState {
+                            case .loading:
+                                LoaderView()
+                            case .failure(_):
+                                Text("Customers error")
+                                    .font(.poppinsBold(size: 20))
+                                    .foregroundStyle(Color.refinery)
+                                
+                            case .value(let customers):
+                                CustomersView(customers: customers)
+                            }
+                        }
+                        
+                    }
+                    Spacer()
+                }
+
             }
             Spacer()
         }.ignoresSafeArea(.all)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.white)
-            .drawConnections(connections: connections) 
-//        { connection in
-//                let view = ModalInfoConnectionView(connection: connection) {
-//                    navigation.dismissModal(animated: true, completion: nil)
-//                }
-//                navigation.presentPopup(view.asDestination(), animated: true, completion: nil)
-//            }
+            .drawConnections(connectionsState: viewModel.connectionState)
     }
 }
 
 struct RefineriesView: View {
     @EnvironmentObject private var navigation: Navigation
+    let refineries: [Refinery]
     
     var body: some View {
         VStack(spacing: 32) {
@@ -61,6 +94,7 @@ struct RefineriesView: View {
 
 struct StorageTanksView: View {
     @EnvironmentObject private var navigation: Navigation
+    let tanks: [Tank]
     
     var body: some View {
         VStack(spacing: 32) {
@@ -68,14 +102,14 @@ struct StorageTanksView: View {
                 .font(.poppinsSemiBold(size: 20))
                 .foregroundStyle(Color.tank)
             
-            HStack(spacing: 20) {
+            HStack(spacing: 400) {
                 ForEach(tanks, id: \.id) { tank in
                     NodeView(name: tank.name, color: Color.tank) {
                         let view = ModalInfoTankView(tank: tank) {
                             navigation.dismissModal(animated: true, completion: nil)
                         }
                         navigation.presentPopup(view.asDestination(), animated: true, completion: nil)
-                    }.anchorPreference(key: NodePositionKey.self, value: .center) {
+                    }.anchorPreference(key: NodePositionKey.self, value: .bottom) {
                         [NodePosition(id: tank.id, point: $0)]
                     }
                 }
@@ -86,6 +120,7 @@ struct StorageTanksView: View {
 
 struct CustomersView: View {
     @EnvironmentObject private var navigation: Navigation
+    let customers: [Customer]
     
     var body: some View {
         VStack(spacing: 32) {
