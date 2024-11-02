@@ -1,5 +1,6 @@
 import csv
 from classes import Connection, Customer, Refinery, Tanks, Demand
+from api import basePath
 
 def parse_connections(file_path):
     with open(file_path, 'r') as file:
@@ -22,7 +23,7 @@ def parse_connections(file_path):
                 print(f"Error processing row {row}: {e}")
                 continue
 
-connections_path = '/Users/mready/Downloads/challenge-main/eval-platform/src/main/resources/liquibase/data/connections.csv'
+connections_path = basePath + 'connections.csv'
 connections_data = list(parse_connections(connections_path))
 
 def parse_customers(file_path):
@@ -46,7 +47,7 @@ def parse_customers(file_path):
                 print(f"Error processing row {row}: {e}")
                 continue
 
-customers_path = '/Users/mready/Downloads/challenge-main/eval-platform/src/main/resources/liquibase/data/customers.csv'
+customers_path = basePath + 'customers.csv'
 customers_data = list(parse_customers(customers_path))
 
 def parse_refineries(file_path):
@@ -75,7 +76,7 @@ def parse_refineries(file_path):
                 print(f"Error processing row {row}: {e}")
                 continue
 
-refineries_path = '/Users/mready/Downloads/challenge-main/eval-platform/src/main/resources/liquibase/data/refineries.csv'
+refineries_path = basePath + 'refineries.csv'
 refineries_data = list(parse_refineries(refineries_path))
 
 def parse_tanks(file_path):
@@ -103,7 +104,7 @@ def parse_tanks(file_path):
                 print(f"Error processing row {row}: {e}")
                 continue 
 
-tanks_path = '/Users/mready/Downloads/challenge-main/eval-platform/src/main/resources/liquibase/data/tanks.csv'
+tanks_path = basePath + 'tanks.csv'
 tanks_data = list(parse_tanks(tanks_path))
 
 def parse_first_demands(file_path):
@@ -126,7 +127,7 @@ def parse_first_demands(file_path):
                 print(f"Error processing row {row}: {e}")
                 continue
 
-first_demands_path = '/Users/mready/Downloads/challenge-main/eval-platform/src/main/resources/liquibase/data/demands.csv'
+first_demands_path = basePath + 'demands.csv'
 first_demands_data = list(parse_first_demands(first_demands_path))
 
 def print_output(): # to test parsing, run it forwarding the output to a file
