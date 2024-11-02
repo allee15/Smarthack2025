@@ -149,4 +149,20 @@ def print_output(): # to test parsing, run it forwarding the output to a file
     print(f"Parsed first demands: {len(first_demands_data)}")
     for i, demand in enumerate(first_demands_data):
         print(f"Demand {i}: {demand}")
+
+def make_id_to_obj_dict():
+    id_to_obj = {}
+    for connection in connections_data:
+        id_to_obj[connection.connection_id] = connection
+    for customer in customers_data:
+        id_to_obj[customer.customer_id] = customer
+    for refinery in refineries_data:
+        id_to_obj[refinery.refinery_id] = refinery
+    for tank in tanks_data:
+        id_to_obj[tank.tank_id] = tank
+    return id_to_obj
+
+    
+
+
         
