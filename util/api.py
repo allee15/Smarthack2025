@@ -5,7 +5,7 @@ from classes import *
 
 app = flask.Flask(__name__)
 
-basePath = '/Users/mready/Downloads/challenge-main/eval-platform/src/main/resources/liquibase/data/'
+basePath = '/Users/allee/Documents/hackatoane/Smarthack2024/eval-platform/src/main/resources/liquibase/data/'
 
 @app.route('/connections', methods=['GET'])
 def get_connections():

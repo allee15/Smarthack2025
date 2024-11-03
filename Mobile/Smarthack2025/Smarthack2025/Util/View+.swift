@@ -39,3 +39,47 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
+
+struct NodePosition: Equatable {
+    let id: String
+    let point: Anchor<CGPoint>
+}
+
+struct NodePositionKey: PreferenceKey {
+    static var defaultValue: [NodePosition] = []
+
+    static func reduce(value: inout [NodePosition], nextValue: () -> [NodePosition]) {
+        value.append(contentsOf: nextValue())
+    }
+}
+
+extension View {
+    func drawConnections(connectionsState: ConnectionsState) -> some View {
+        self.overlayPreferenceValue(NodePositionKey.self) { nodePositions in
+            switch connectionsState {
+            case .value(let connections):
+                GeometryReader { geometry in
+                    ForEach(connections, id: \.id) { connection in
+                        if let fromPosition = nodePositions.first(where: { $0.id == connection.fromId }),
+                           let toPosition = nodePositions.first(where: { $0.id == connection.toId }) {
+                            Path { path in
+                                let fromPoint = geometry[fromPosition.point]
+                                let toPoint = geometry[toPosition.point]
+                                path.move(to: fromPoint)
+                                path.addLine(to: toPoint)
+                            }
+                            .stroke(
+                                connection.isCurrentlyUsed ? (connection.connectionType.lowercased() == "TRUCK".lowercased() ? Color.colorArray[(Int(connection.distance) ?? 0) % 15] : Color.freePath) : Color.clear,
+                                lineWidth: 2
+                            )
+                        }
+                    }
+                }
+            case .failure(_):
+                EmptyView()
+            case .loading:
+                EmptyView()
+            }
+        }
+    }
+}

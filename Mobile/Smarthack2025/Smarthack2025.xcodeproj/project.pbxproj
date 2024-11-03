@@ -15,36 +15,28 @@
 		0FD38EBB2CD286AF00338FAC /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EBA2CD286AF00338FAC /* Navigation.swift */; };
 		0FD38EBD2CD286C200338FAC /* SafeAreaInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EBC2CD286C200338FAC /* SafeAreaInsets.swift */; };
 		0FD38EBF2CD286D000338FAC /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EBE2CD286D000338FAC /* View+.swift */; };
-		0FD38EC32CD286FB00338FAC /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EC22CD286FB00338FAC /* String+.swift */; };
-		0FD38EC72CD2876500338FAC /* LeftNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EC62CD2876500338FAC /* LeftNavBar.swift */; };
-		0FD38EC92CD2878700338FAC /* CenteredNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EC82CD2878700338FAC /* CenteredNavBarView.swift */; };
-		0FD38ECB2CD2879F00338FAC /* TitleNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38ECA2CD2879F00338FAC /* TitleNavBarView.swift */; };
-		0FD38ECD2CD287B300338FAC /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38ECC2CD287B300338FAC /* NavBarView.swift */; };
-		0FD38ED02CD287D300338FAC /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38ECF2CD287D300338FAC /* CloseButton.swift */; };
-		0FD38ED22CD287FA00338FAC /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38ED12CD287FA00338FAC /* BackButton.swift */; };
-		0FD38ED42CD2881800338FAC /* MainButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38ED32CD2881800338FAC /* MainButtonView.swift */; };
-		0FD38ED62CD2884500338FAC /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38ED52CD2884500338FAC /* LoaderView.swift */; };
-		0FD38ED82CD2885C00338FAC /* FloatingField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38ED72CD2885C00338FAC /* FloatingField.swift */; };
-		0FD38EDA2CD2889100338FAC /* ModalChooseOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38ED92CD2889100338FAC /* ModalChooseOptionView.swift */; };
-		0FD38EDC2CD288B900338FAC /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EDB2CD288B900338FAC /* WebViewScreen.swift */; };
-		0FD38EDF2CD288E400338FAC /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EDE2CD288E400338FAC /* OnboardingScreen.swift */; };
-		0FD38EE12CD2890C00338FAC /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EE02CD2890C00338FAC /* OnboardingViewModel.swift */; };
-		0FD38EE32CD2893000338FAC /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EE22CD2893000338FAC /* OnboardingData.swift */; };
-		0FD38EE52CD2894900338FAC /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EE42CD2894900338FAC /* UserDefaultsService.swift */; };
-		0FD38EE82CD2899300338FAC /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EE72CD2899300338FAC /* TabBarItem.swift */; };
-		0FD38EEA2CD289C500338FAC /* TabBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EE92CD289C500338FAC /* TabBarScreen.swift */; };
-		0FD38EEC2CD289E900338FAC /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EEB2CD289E900338FAC /* TabBarViewModel.swift */; };
 		0FD38EEE2CD289FF00338FAC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EED2CD289FF00338FAC /* RootView.swift */; };
 		0FD38EF12CD28AD200338FAC /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FD38EF02CD28AD200338FAC /* Poppins-Bold.ttf */; };
 		0FD38EF32CD28ADE00338FAC /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FD38EF22CD28ADE00338FAC /* Poppins-Regular.ttf */; };
 		0FD38EF52CD28AE600338FAC /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FD38EF42CD28AE600338FAC /* Poppins-SemiBold.ttf */; };
 		0FD38EF82CD28BDA00338FAC /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD38EF72CD28BDA00338FAC /* netfox */; };
+		0FD38EFA2CD64C7100338FAC /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EF92CD64C7100338FAC /* Connection.swift */; };
+		0FD38EFC2CD64D8500338FAC /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EFB2CD64D8500338FAC /* Customer.swift */; };
+		0FD38EFE2CD64E1B00338FAC /* Demand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EFD2CD64E1B00338FAC /* Demand.swift */; };
+		0FD38F002CD64E8300338FAC /* Refinery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38EFF2CD64E8300338FAC /* Refinery.swift */; };
+		0FD38F022CD64F2C00338FAC /* Tank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38F012CD64F2C00338FAC /* Tank.swift */; };
+		0FD38F042CD64FD700338FAC /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38F032CD64FD700338FAC /* Team.swift */; };
+		0FD38F082CD65A6100338FAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD38F072CD65A6100338FAC /* LaunchScreen.storyboard */; };
+		0FD38F0B2CD6BA0D00338FAC /* MapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38F0A2CD6BA0D00338FAC /* MapAPI.swift */; };
+		0FD38F0E2CD6BAD100338FAC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD38F0D2CD6BAD100338FAC /* SwiftyJSON */; };
+		0FD38F102CD6BC8A00338FAC /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38F0F2CD6BC8A00338FAC /* MapService.swift */; };
+		0FD38F122CD6BCD600338FAC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38F112CD6BCD600338FAC /* MapViewModel.swift */; };
+		0FD38F142CD6C1B500338FAC /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD38F132CD6C1B500338FAC /* LoaderView.swift */; };
 		9B03F1B82CD27F6500E61CD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03F1B72CD27F6500E61CD0 /* AppDelegate.swift */; };
-		9B03F1BA2CD27F6500E61CD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03F1B92CD27F6500E61CD0 /* ContentView.swift */; };
+		9B03F1BA2CD27F6500E61CD0 /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03F1B92CD27F6500E61CD0 /* MapScreen.swift */; };
 		9B03F1BC2CD27F6800E61CD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B03F1BB2CD27F6800E61CD0 /* Assets.xcassets */; };
 		9B03F1BF2CD27F6800E61CD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B03F1BE2CD27F6800E61CD0 /* Preview Assets.xcassets */; };
 		9B03F1C62CD2800D00E61CD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03F1C52CD2800D00E61CD0 /* SceneDelegate.swift */; };
-		9B03F1C92CD2815F00E61CD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B03F1C82CD2815F00E61CD0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,37 +48,28 @@
 		0FD38EBA2CD286AF00338FAC /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		0FD38EBC2CD286C200338FAC /* SafeAreaInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaInsets.swift; sourceTree = "<group>"; };
 		0FD38EBE2CD286D000338FAC /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
-		0FD38EC22CD286FB00338FAC /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
-		0FD38EC62CD2876500338FAC /* LeftNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftNavBar.swift; sourceTree = "<group>"; };
-		0FD38EC82CD2878700338FAC /* CenteredNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredNavBarView.swift; sourceTree = "<group>"; };
-		0FD38ECA2CD2879F00338FAC /* TitleNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavBarView.swift; sourceTree = "<group>"; };
-		0FD38ECC2CD287B300338FAC /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
-		0FD38ECF2CD287D300338FAC /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
-		0FD38ED12CD287FA00338FAC /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		0FD38ED32CD2881800338FAC /* MainButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonView.swift; sourceTree = "<group>"; };
-		0FD38ED52CD2884500338FAC /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
-		0FD38ED72CD2885C00338FAC /* FloatingField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingField.swift; sourceTree = "<group>"; };
-		0FD38ED92CD2889100338FAC /* ModalChooseOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalChooseOptionView.swift; sourceTree = "<group>"; };
-		0FD38EDB2CD288B900338FAC /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
-		0FD38EDE2CD288E400338FAC /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
-		0FD38EE02CD2890C00338FAC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		0FD38EE22CD2893000338FAC /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
-		0FD38EE42CD2894900338FAC /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
-		0FD38EE72CD2899300338FAC /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
-		0FD38EE92CD289C500338FAC /* TabBarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarScreen.swift; sourceTree = "<group>"; };
-		0FD38EEB2CD289E900338FAC /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		0FD38EED2CD289FF00338FAC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		0FD38EF02CD28AD200338FAC /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		0FD38EF22CD28ADE00338FAC /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		0FD38EF42CD28AE600338FAC /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		0FD38EF92CD64C7100338FAC /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		0FD38EFB2CD64D8500338FAC /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		0FD38EFD2CD64E1B00338FAC /* Demand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demand.swift; sourceTree = "<group>"; };
+		0FD38EFF2CD64E8300338FAC /* Refinery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refinery.swift; sourceTree = "<group>"; };
+		0FD38F012CD64F2C00338FAC /* Tank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tank.swift; sourceTree = "<group>"; };
+		0FD38F032CD64FD700338FAC /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		0FD38F072CD65A6100338FAC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FD38F0A2CD6BA0D00338FAC /* MapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAPI.swift; sourceTree = "<group>"; };
+		0FD38F0F2CD6BC8A00338FAC /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		0FD38F112CD6BCD600338FAC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		0FD38F132CD6C1B500338FAC /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		9B03F1B42CD27F6500E61CD0 /* Smarthack2025.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smarthack2025.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B03F1B72CD27F6500E61CD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B03F1B92CD27F6500E61CD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B03F1B92CD27F6500E61CD0 /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
 		9B03F1BB2CD27F6800E61CD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B03F1BE2CD27F6800E61CD0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9B03F1C52CD2800D00E61CD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9B03F1C72CD2809E00E61CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9B03F1C82CD2815F00E61CD0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD38F0E2CD6BAD100338FAC /* SwiftyJSON in Frameworks */,
 				0FD38EF82CD28BDA00338FAC /* netfox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,16 +88,9 @@
 		0FD38EAA2CD285E700338FAC /* API */ = {
 			isa = PBXGroup;
 			children = (
+				0FD38F0A2CD6BA0D00338FAC /* MapAPI.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		0FD38EAB2CD285FD00338FAC /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				0FD38EE42CD2894900338FAC /* UserDefaultsService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		0FD38EAC2CD2860F00338FAC /* Util */ = {
@@ -125,7 +102,7 @@
 				0FD38EBA2CD286AF00338FAC /* Navigation.swift */,
 				0FD38EBC2CD286C200338FAC /* SafeAreaInsets.swift */,
 				0FD38EBE2CD286D000338FAC /* View+.swift */,
-				0FD38EC22CD286FB00338FAC /* String+.swift */,
+				0FD38F132CD6C1B500338FAC /* LoaderView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -143,10 +120,8 @@
 		0FD38EAE2CD2862600338FAC /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9B03F1B92CD27F6500E61CD0 /* ContentView.swift */,
-				0FD38EC42CD2874700338FAC /* ReusableViews */,
-				0FD38EDD2CD288D700338FAC /* Onboarding */,
-				0FD38EE62CD2897F00338FAC /* TabBar */,
+				9B03F1B92CD27F6500E61CD0 /* MapScreen.swift */,
+				0FD38F112CD6BCD600338FAC /* MapViewModel.swift */,
 				0FD38EED2CD289FF00338FAC /* RootView.swift */,
 			);
 			path = UI;
@@ -155,62 +130,14 @@
 		0FD38EAF2CD2863400338FAC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0FD38EE22CD2893000338FAC /* OnboardingData.swift */,
+				0FD38EF92CD64C7100338FAC /* Connection.swift */,
+				0FD38EFB2CD64D8500338FAC /* Customer.swift */,
+				0FD38EFD2CD64E1B00338FAC /* Demand.swift */,
+				0FD38EFF2CD64E8300338FAC /* Refinery.swift */,
+				0FD38F012CD64F2C00338FAC /* Tank.swift */,
+				0FD38F032CD64FD700338FAC /* Team.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		0FD38EC42CD2874700338FAC /* ReusableViews */ = {
-			isa = PBXGroup;
-			children = (
-				0FD38EC52CD2875200338FAC /* NavBar */,
-				0FD38ECE2CD287C100338FAC /* Buttons */,
-				0FD38ED52CD2884500338FAC /* LoaderView.swift */,
-				0FD38ED72CD2885C00338FAC /* FloatingField.swift */,
-				0FD38ED92CD2889100338FAC /* ModalChooseOptionView.swift */,
-				0FD38EDB2CD288B900338FAC /* WebViewScreen.swift */,
-			);
-			path = ReusableViews;
-			sourceTree = "<group>";
-		};
-		0FD38EC52CD2875200338FAC /* NavBar */ = {
-			isa = PBXGroup;
-			children = (
-				0FD38EC62CD2876500338FAC /* LeftNavBar.swift */,
-				0FD38EC82CD2878700338FAC /* CenteredNavBarView.swift */,
-				0FD38ECA2CD2879F00338FAC /* TitleNavBarView.swift */,
-				0FD38ECC2CD287B300338FAC /* NavBarView.swift */,
-			);
-			path = NavBar;
-			sourceTree = "<group>";
-		};
-		0FD38ECE2CD287C100338FAC /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				0FD38ECF2CD287D300338FAC /* CloseButton.swift */,
-				0FD38ED12CD287FA00338FAC /* BackButton.swift */,
-				0FD38ED32CD2881800338FAC /* MainButtonView.swift */,
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
-		0FD38EDD2CD288D700338FAC /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				0FD38EDE2CD288E400338FAC /* OnboardingScreen.swift */,
-				0FD38EE02CD2890C00338FAC /* OnboardingViewModel.swift */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		0FD38EE62CD2897F00338FAC /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				0FD38EE72CD2899300338FAC /* TabBarItem.swift */,
-				0FD38EE92CD289C500338FAC /* TabBarScreen.swift */,
-				0FD38EEB2CD289E900338FAC /* TabBarViewModel.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		0FD38EEF2CD28AC400338FAC /* Fonts */ = {
@@ -221,6 +148,14 @@
 				0FD38EF02CD28AD200338FAC /* Poppins-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0FD38F092CD68E4800338FAC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0FD38F0F2CD6BC8A00338FAC /* MapService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		9B03F1AB2CD27F6500E61CD0 = {
@@ -245,10 +180,10 @@
 				9B03F1C72CD2809E00E61CD0 /* Info.plist */,
 				9B03F1B72CD27F6500E61CD0 /* AppDelegate.swift */,
 				9B03F1C52CD2800D00E61CD0 /* SceneDelegate.swift */,
-				9B03F1C82CD2815F00E61CD0 /* LaunchScreen.storyboard */,
+				0FD38F072CD65A6100338FAC /* LaunchScreen.storyboard */,
 				9B03F1BB2CD27F6800E61CD0 /* Assets.xcassets */,
 				0FD38EAA2CD285E700338FAC /* API */,
-				0FD38EAB2CD285FD00338FAC /* Service */,
+				0FD38F092CD68E4800338FAC /* Service */,
 				0FD38EAF2CD2863400338FAC /* Model */,
 				0FD38EAD2CD2861900338FAC /* Resources */,
 				0FD38EAC2CD2860F00338FAC /* Util */,
@@ -284,6 +219,7 @@
 			name = Smarthack2025;
 			packageProductDependencies = (
 				0FD38EF72CD28BDA00338FAC /* netfox */,
+				0FD38F0D2CD6BAD100338FAC /* SwiftyJSON */,
 			);
 			productName = Smarthack2025;
 			productReference = 9B03F1B42CD27F6500E61CD0 /* Smarthack2025.app */;
@@ -315,6 +251,7 @@
 			mainGroup = 9B03F1AB2CD27F6500E61CD0;
 			packageReferences = (
 				0FD38EF62CD28BDA00338FAC /* XCRemoteSwiftPackageReference "netfox" */,
+				0FD38F0C2CD6BAD100338FAC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 9B03F1B52CD27F6500E61CD0 /* Products */;
 			projectDirPath = "";
@@ -330,10 +267,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B03F1C92CD2815F00E61CD0 /* LaunchScreen.storyboard in Resources */,
 				9B03F1BF2CD27F6800E61CD0 /* Preview Assets.xcassets in Resources */,
 				9B03F1BC2CD27F6800E61CD0 /* Assets.xcassets in Resources */,
 				0FD38EF52CD28AE600338FAC /* Poppins-SemiBold.ttf in Resources */,
+				0FD38F082CD65A6100338FAC /* LaunchScreen.storyboard in Resources */,
 				0FD38EF12CD28AD200338FAC /* Poppins-Bold.ttf in Resources */,
 				0FD38EF32CD28ADE00338FAC /* Poppins-Regular.ttf in Resources */,
 			);
@@ -346,37 +283,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FD38EE12CD2890C00338FAC /* OnboardingViewModel.swift in Sources */,
-				0FD38ECD2CD287B300338FAC /* NavBarView.swift in Sources */,
-				0FD38EC92CD2878700338FAC /* CenteredNavBarView.swift in Sources */,
 				0FD38EB12CD2864800338FAC /* Font.swift in Sources */,
-				0FD38EE32CD2893000338FAC /* OnboardingData.swift in Sources */,
 				0FD38EB32CD2865900338FAC /* Colors.swift in Sources */,
 				0FD38EB92CD2869E00338FAC /* EnvironmentObjects.swift in Sources */,
 				0FD38EBD2CD286C200338FAC /* SafeAreaInsets.swift in Sources */,
-				0FD38ED02CD287D300338FAC /* CloseButton.swift in Sources */,
-				0FD38EDA2CD2889100338FAC /* ModalChooseOptionView.swift in Sources */,
-				0FD38EEC2CD289E900338FAC /* TabBarViewModel.swift in Sources */,
-				0FD38ED82CD2885C00338FAC /* FloatingField.swift in Sources */,
-				9B03F1BA2CD27F6500E61CD0 /* ContentView.swift in Sources */,
+				0FD38EFE2CD64E1B00338FAC /* Demand.swift in Sources */,
+				0FD38F042CD64FD700338FAC /* Team.swift in Sources */,
+				9B03F1BA2CD27F6500E61CD0 /* MapScreen.swift in Sources */,
 				0FD38EBF2CD286D000338FAC /* View+.swift in Sources */,
 				9B03F1B82CD27F6500E61CD0 /* AppDelegate.swift in Sources */,
 				9B03F1C62CD2800D00E61CD0 /* SceneDelegate.swift in Sources */,
-				0FD38EE52CD2894900338FAC /* UserDefaultsService.swift in Sources */,
 				0FD38EBB2CD286AF00338FAC /* Navigation.swift in Sources */,
 				0FD38EB52CD2867B00338FAC /* BaseViewModel.swift in Sources */,
-				0FD38EE82CD2899300338FAC /* TabBarItem.swift in Sources */,
-				0FD38ED42CD2881800338FAC /* MainButtonView.swift in Sources */,
-				0FD38EC72CD2876500338FAC /* LeftNavBar.swift in Sources */,
-				0FD38ED22CD287FA00338FAC /* BackButton.swift in Sources */,
-				0FD38ECB2CD2879F00338FAC /* TitleNavBarView.swift in Sources */,
+				0FD38F0B2CD6BA0D00338FAC /* MapAPI.swift in Sources */,
+				0FD38EFC2CD64D8500338FAC /* Customer.swift in Sources */,
+				0FD38F002CD64E8300338FAC /* Refinery.swift in Sources */,
 				0FD38EEE2CD289FF00338FAC /* RootView.swift in Sources */,
-				0FD38ED62CD2884500338FAC /* LoaderView.swift in Sources */,
-				0FD38EDF2CD288E400338FAC /* OnboardingScreen.swift in Sources */,
-				0FD38EDC2CD288B900338FAC /* WebViewScreen.swift in Sources */,
-				0FD38EC32CD286FB00338FAC /* String+.swift in Sources */,
-				0FD38EEA2CD289C500338FAC /* TabBarScreen.swift in Sources */,
+				0FD38F022CD64F2C00338FAC /* Tank.swift in Sources */,
+				0FD38F102CD6BC8A00338FAC /* MapService.swift in Sources */,
+				0FD38EFA2CD64C7100338FAC /* Connection.swift in Sources */,
+				0FD38F142CD6C1B500338FAC /* LoaderView.swift in Sources */,
 				0FD38EB72CD2868D00338FAC /* ControllerRepresentable.swift in Sources */,
+				0FD38F122CD6BCD600338FAC /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +522,14 @@
 				minimumVersion = 1.21.0;
 			};
 		};
+		0FD38F0C2CD6BAD100338FAC /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -601,6 +537,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0FD38EF62CD28BDA00338FAC /* XCRemoteSwiftPackageReference "netfox" */;
 			productName = netfox;
+		};
+		0FD38F0D2CD6BAD100338FAC /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FD38F0C2CD6BAD100338FAC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

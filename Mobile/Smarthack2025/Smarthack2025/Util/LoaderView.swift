@@ -2,7 +2,7 @@
 //  LoaderView.swift
 //  Smarthack2025
 //
-//  Created by Alexia Aldea on 30.10.2024.
+//  Created by Alexia Aldea on 02.11.2024.
 //
 
 import SwiftUI
@@ -19,7 +19,7 @@ struct LoaderView: View {
         VStack {
             Circle()
                 .trim(from: animateStrokeStart ? 1/3 : 1/9, to: animateStrokeEnd ? 2/5 : 1)
-                .stroke(AngularGradient(colors: color ?? [Color.simpleBlue], center: .center), style: StrokeStyle(lineWidth: 5, lineCap: .round))
+                .stroke(AngularGradient(colors: color ?? [Color.refinery], center: .center), style: StrokeStyle(lineWidth: 5, lineCap: .round))
                 .frame(width: width, height: height)
                 .rotationEffect(Angle(degrees: animated ? 360 : 0))
         }.onAppear {
@@ -37,14 +37,3 @@ struct LoaderView: View {
         }
     }
 }
-
-struct LoaderViewWithBg: View {
-   var body: some View {
-       ZStack {
-           Color.black.opacity(0.5)
-           LoaderView()
-       }.frame(maxWidth: .infinity, maxHeight: .infinity)
-           .ignoresSafeArea(.all)
-   }
-}
-
