@@ -2,168 +2,159 @@ import csv
 from classes import Connection, Customer, Refinery, Tanks, Demand
 from api import basePath
 
-def parse_connections(file_path):
-    with open(file_path, 'r') as file:
-        csv_reader = csv.reader(file,delimiter=';', quotechar='"')
         
-        next(csv_reader, None)
-        
-        for row in csv_reader:
-            try:
-                yield Connection(
-                    row[0],
-                    row[1],
-                    row[2],
-                    row[3],
-                    row[4],
-                    row[5],
-                    row[6]
-                )
-            except IndexError as e:
-                print(f"Error processing row {row}: {e}")
-                continue
+class DataParser:
+    def __init__(self, base_path):
+        self.base_path = base_path
+        self.connections_data = []
+        self.customers_data = []
+        self.refineries_data = []
+        self.tanks_data = []
+        self.first_demands_data = []
+        self.id_to_obj = {}
+        self.load_data()
 
-connections_path = basePath + 'connections.csv'
-connections_data = list(parse_connections(connections_path))
+    def load_data(self):
+        self.connections_data = list(self.parse_connections(self.base_path + 'connections.csv'))
+        self.customers_data = list(self.parse_customers(self.base_path + 'customers.csv'))
+        self.refineries_data = list(self.parse_refineries(self.base_path + 'refineries.csv'))
+        self.tanks_data = list(self.parse_tanks(self.base_path + 'tanks.csv'))
+        self.first_demands_data = list(self.parse_first_demands(self.base_path + 'demands.csv'))
+        self.id_to_obj = self.make_id_to_obj_dict()
 
-def parse_customers(file_path):
-    with open(file_path, 'r') as file:
-        csv_reader = csv.reader(file,delimiter=';', quotechar='"')
-        
-        next(csv_reader, None)
-        
-        for row in csv_reader:
-            try:
-                yield Customer(
-                    row[0],
-                    row[1],
-                    row[2],
-                    row[3],
-                    row[4],
-                    row[5],
-                    row[6]
-                )
-            except IndexError as e:
-                print(f"Error processing row {row}: {e}")
-                continue
-
-customers_path = basePath + 'customers.csv'
-customers_data = list(parse_customers(customers_path))
-
-def parse_refineries(file_path):
-    with open(file_path, 'r') as file:
-        csv_reader = csv.reader(file,delimiter=';', quotechar='"')
-        
-        next(csv_reader, None)
-        
-        for row in csv_reader:
-            try:
-                yield Refinery(
-                    row[0],
-                    row[1],
-                    row[2],
-                    row[3],
-                    row[4],
-                    row[5],
-                    row[6],
-                    row[7],
-                    row[8],
-                    row[9],
-                    row[10],
-                    row[11]
-                )
-            except IndexError as e:
-                print(f"Error processing row {row}: {e}")
-                continue
-
-refineries_path = basePath + 'refineries.csv'
-refineries_data = list(parse_refineries(refineries_path))
-
-def parse_tanks(file_path):
-    with open(file_path, 'r') as file:
-        csv_reader = csv.reader(file,delimiter=';', quotechar='"')
-        
-        next(csv_reader, None)
-        
-        for row in csv_reader:
-            try:
-                yield Tanks(
-                    row[0],
-                    row[1],
-                    row[2],
-                    row[3],
-                    row[4],
-                    row[5],
-                    row[6],
-                    row[7],
-                    row[8],
-                    row[9],
-                    row[10]
-                )
-            except IndexError as e:
-                print(f"Error processing row {row}: {e}")
-                continue 
-
-tanks_path = basePath + 'tanks.csv'
-tanks_data = list(parse_tanks(tanks_path))
-
-def parse_first_demands(file_path):
-    with open(file_path, 'r') as file:
-        csv_reader = csv.reader(file,delimiter=';', quotechar='"')
-        
-        next(csv_reader, None)
-        for row in csv_reader:
-            try:
-                if float(row[3]) == 0:
-                    yield Demand(
+    def parse_connections(self, file_path):
+        with open(file_path, 'r') as file:
+            csv_reader = csv.reader(file, delimiter=';', quotechar='"')
+            next(csv_reader, None)
+            for row in csv_reader:
+                try:
+                    yield Connection(
                         row[0],
                         row[1],
                         row[2],
                         row[3],
                         row[4],
                         row[5],
+                        row[6]
                     )
-            except IndexError as e:
-                print(f"Error processing row {row}: {e}")
-                continue
+                except IndexError as e:
+                    print(f"Error processing row {row}: {e}")
+                    continue
 
-first_demands_path = basePath + 'demands.csv'
-first_demands_data = list(parse_first_demands(first_demands_path))
+    def parse_customers(self, file_path):
+        with open(file_path, 'r') as file:
+            csv_reader = csv.reader(file, delimiter=';', quotechar='"')
+            next(csv_reader, None)
+            for row in csv_reader:
+                try:
+                    yield Customer(
+                        row[0],
+                        row[1],
+                        row[2],
+                        row[3],
+                        row[4],
+                        row[5],
+                        row[6]
+                    )
+                except IndexError as e:
+                    print(f"Error processing row {row}: {e}")
+                    continue
 
-def print_output(): # to test parsing, run it forwarding the output to a file
-    print(f"Parsed connections: {len(connections_data)}")
-    for i, connection in enumerate(connections_data):
-        print(f"Connection {i}: {connection}")
+    def parse_refineries(self, file_path):
+        with open(file_path, 'r') as file:
+            csv_reader = csv.reader(file, delimiter=';', quotechar='"')
+            next(csv_reader, None)
+            for row in csv_reader:
+                try:
+                    yield Refinery(
+                        row[0],
+                        row[1],
+                        row[2],
+                        row[3],
+                        row[4],
+                        row[5],
+                        row[6],
+                        row[7],
+                        row[8],
+                        row[9],
+                        row[10],
+                        row[11]
+                    )
+                except IndexError as e:
+                    print(f"Error processing row {row}: {e}")
+                    continue
 
-    print(f"Parsed customers: {len(customers_data)}")
-    for i, customer in enumerate(customers_data):
-        print(f"Customer {i}: {customer}")
+    def parse_tanks(self, file_path):
+        with open(file_path, 'r') as file:
+            csv_reader = csv.reader(file, delimiter=';', quotechar='"')
+            next(csv_reader, None)
+            for row in csv_reader:
+                try:
+                    yield Tanks(
+                        row[0],
+                        row[1],
+                        row[2],
+                        row[3],
+                        row[4],
+                        row[5],
+                        row[6],
+                        row[7],
+                        row[8],
+                        row[9],
+                        row[10]
+                    )
+                except IndexError as e:
+                    print(f"Error processing row {row}: {e}")
+                    continue
 
-    print(f"Parsed refineries: {len(refineries_data)}")
-    for i, refinery in enumerate(refineries_data):
-        print(f"Refinery {i}: {refinery}")
+    def parse_first_demands(self, file_path):
+        with open(file_path, 'r') as file:
+            csv_reader = csv.reader(file, delimiter=';', quotechar='"')
+            next(csv_reader, None)
+            for row in csv_reader:
+                try:
+                    if float(row[3]) == 0:
+                        yield Demand(
+                            row[0],
+                            row[1],
+                            row[2],
+                            row[3],
+                            row[4],
+                            row[5],
+                        )
+                except IndexError as e:
+                    print(f"Error processing row {row}: {e}")
+                    continue
 
-    print(f"Parsed tanks: {len(tanks_data)}")
-    for i, tank in enumerate(tanks_data):
-        print(f"Tank {i}: {tank}")
+    def make_id_to_obj_dict(self):
+        id_to_obj = {}
+        for connection in self.connections_data:
+            id_to_obj[connection.connection_id] = connection
+        for customer in self.customers_data:
+            id_to_obj[customer.customer_id] = customer
+        for refinery in self.refineries_data:
+            id_to_obj[refinery.refinery_id] = refinery
+        for tank in self.tanks_data:
+            id_to_obj[tank.tank_id] = tank
+        return id_to_obj
 
-    print(f"Parsed first demands: {len(first_demands_data)}")
-    for i, demand in enumerate(first_demands_data):
-        print(f"Demand {i}: {demand}")
+    def print_output(self):  # to test parsing, run it forwarding the output to a file
+        print(f"Parsed connections: {len(self.connections_data)}")
+        for i, connection in enumerate(self.connections_data):
+            print(f"Connection {i}: {connection}")
 
-def make_id_to_obj_dict():
-    id_to_obj = {}
-    for connection in connections_data:
-        id_to_obj[connection.connection_id] = connection
-    for customer in customers_data:
-        id_to_obj[customer.customer_id] = customer
-    for refinery in refineries_data:
-        id_to_obj[refinery.refinery_id] = refinery
-    for tank in tanks_data:
-        id_to_obj[tank.tank_id] = tank
-    return id_to_obj
+        print(f"Parsed customers: {len(self.customers_data)}")
+        for i, customer in enumerate(self.customers_data):
+            print(f"Customer {i}: {customer}")
 
-    
+        print(f"Parsed refineries: {len(self.refineries_data)}")
+        for i, refinery in enumerate(self.refineries_data):
+            print(f"Refinery {i}: {refinery}")
 
+        print(f"Parsed tanks: {len(self.tanks_data)}")
+        for i, tank in enumerate(self.tanks_data):
+            print(f"Tank {i}: {tank}")
 
-        
+        print(f"Parsed first demands: {len(self.first_demands_data)}")
+        for i, demand in enumerate(self.first_demands_data):
+            print(f"Demand {i}: {demand}")
