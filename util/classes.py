@@ -1,3 +1,5 @@
+import uuid
+
 class Connection:
     def __init__(self, connection_id, from_id, to_id, distance, lead_time_days, connection_type, max_capacity):
         self.connection_id = connection_id
@@ -125,7 +127,9 @@ class Tanks:
         }
 
 class Demand:
-    def __init__(self, demand_id, customer_id,quantity,post_day,start_delivery_day,end_delivery_day):
+    def __init__(self, customer_id,quantity,post_day,start_delivery_day,end_delivery_day,demand_id = None):
+        if demand_id is None:
+            demand_id = uuid.uuid4()
         self.demand_id = demand_id
         self.customer_id = customer_id
         self.quantity = quantity
@@ -148,3 +152,6 @@ class Demand:
             "start_delivery_day": self.start_delivery_day,
             "end_delivery_day": self.end_delivery_day
         }
+    
+    def __lt__(self, other):
+        return self.end_delivery_day < other.end_delivery_day
